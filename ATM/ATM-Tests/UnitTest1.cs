@@ -9,7 +9,7 @@ namespace ATM_Tests
         [Fact]
         public void BalanceEquals300()
         {
-
+            ATMApp.balance = 300.00m;
             // Action
             decimal result = ATMApp.ViewBalance();
             string final = result.ToString();
@@ -21,6 +21,8 @@ namespace ATM_Tests
         [Fact]
         public void BalanceDoesNotEqual15()
         {
+            ATMApp.balance = 300.00m;
+
             decimal result = ATMApp.ViewBalance();
             string final = result.ToString();
 
@@ -30,6 +32,8 @@ namespace ATM_Tests
         [Fact]
         public void BalanceEquals280()
         {
+            ATMApp.balance = 300.00m;
+
             decimal result = ATMApp.Withdraw(20);
             string final = result.ToString();
 
@@ -39,6 +43,8 @@ namespace ATM_Tests
         [Fact]
         public void BalanceNotNegative()
         {
+            ATMApp.balance = 300.00m;
+
             decimal result = ATMApp.Withdraw(350);
             string final = result.ToString();
 
@@ -49,6 +55,8 @@ namespace ATM_Tests
         [Fact]
         public void BalanceEquals320()
         {
+            ATMApp.balance = 300.00m;
+
             decimal result = ATMApp.Deposit(20);
             string final = result.ToString();
 
@@ -58,6 +66,8 @@ namespace ATM_Tests
         [Fact]
         public void DepositNotNegative()
         {
+            ATMApp.balance = 300.00m;
+
             decimal result = ATMApp.Deposit(-20);
             string final = result.ToString();
 

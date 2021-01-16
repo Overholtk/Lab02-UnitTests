@@ -35,19 +35,33 @@ namespace ATM
                 {
                     Console.Write("Amount to withdraw?: ");
                     string withdrawInput = Console.ReadLine();
+                    try
+                    {
                     decimal w = Convert.ToDecimal(withdrawInput);
                     Withdraw(w);
                     Console.WriteLine($"Your balance is now {balance}");
                     Console.WriteLine("Would you like to make another transaction?");
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Please enter a valid monetary input.");
+                    }
                 }
                 if(menuInput == "3")
                 {
                     Console.Write("Amount to deposit?: ");
                     string depositInput = Console.ReadLine();
+                    try
+                    {
                     decimal d = Convert.ToDecimal(depositInput);
                     Deposit(d);
                     Console.WriteLine($"Your balance is now {balance}");
                     Console.WriteLine("Would you like to make another transaction?");
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Please enter a valid monetary input.");
+                    }
                 }
                 else if (menuInput != "1" && menuInput != "2" && menuInput != "3" && menuInput != "4")
                 {
